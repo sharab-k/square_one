@@ -171,7 +171,7 @@
         <section id="brand-marquee-showcase" class="w-full bg-[#FCFDFA] py-16 md:py-20 border-t border-zinc-100/30">
             <div class="w-full text-center px-6 mb-12 md:mb-16">
                 <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-normal tracking-tight max-w-4xl mx-auto text-neutral-900 leading-tight">
-                    We help the world's leading brands create standout ads and campaigns at speed—from concept to execution to results.
+                    Selected live work from our recent client portfolio—real websites, storefronts, and digital experiences built to perform.
                 </h3>
                 <span class="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-neutral-400 block mt-10 md:mt-12">
                     TRUSTED BY THE WORLD'S BIGGEST BRANDS
@@ -180,41 +180,43 @@
 
             <!-- Custom Continuous Marquee Container Loop Layer -->
             <div class="marquee-container opacity-85 hover:opacity-100 transition-opacity duration-300">
-                <div class="marquee-wrapper gap-16 md:gap-24 pr-16 md:pr-24 flex items-center">
-                    
-                  <!-- DATABRICKS VECTOR -->
-                    <div class="flex items-center justify-center w-28 md:w-36 h-12 text-neutral-800">
-                        <svg class="h-6 md:h-7 w-auto fill-current" viewBox="0 0 130 30"><path d="M17.4 0L3.1 8.2v16.5l14.3 8.3 14.3-8.3V8.2L17.4 0zm11 23L17.4 29.3 6.4 23V10.7l11-6.4 11 6.4V23zm-11-13.8L9.1 14l8.3 4.8 8.3-4.8-8.3-4.8z"/><text x="40" y="22" font-size="18" font-weight="bold" letter-spacing="-0.5">databricks</text></svg>
+                <div class="marquee-wrapper gap-10 md:gap-16 pr-10 md:pr-16 flex items-center">
+                    <div class="flex items-center gap-8 md:gap-12 shrink-0">
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">WolaNin Aesthetics</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">YY Aesthetics</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Laser Zentrum Heidelberg</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Asandra MD</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Lvate</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Our Real Success</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">High Key Agency</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Roof Plumber Sydney</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Ammanah Legal</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Scribble MH</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Miras</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Rawayat</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Laam</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Echelon Financial</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Yingli Solar</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Sundial Home</span>
                     </div>
-                    <!-- DROPBOX VECTOR -->
-                    <div class="flex items-center justify-center w-24 md:w-32 h-12 text-neutral-800">
-                        <svg class="h-5 md:h-6 w-auto fill-current" viewBox="0 0 120 28"><path d="M7.5 3.5L0 8.2l5.3 3.5 7.5-4.7L7.5 3.5zm0 13.5L0 21.7l5.3 3.5 7.5-4.7-5.3-3.5zm12.7-13.5l-7.5 4.7 7.5 4.7 7.5-4.7-7.5-4.7zm0 13.5l-7.5 4.7 7.5 4.7 7.5-4.7-7.5-4.7zM7.5 11.2L0 16l5.3 3.5 7.5-4.7-5.3-3.6zm12.7 0l-7.5 4.8 7.5 4.7 7.5-4.7-7.5-3.6z"/><text x="36" y="20" font-size="17" font-weight="bold" letter-spacing="0.2">Dropbox</text></svg>
+                    <div class="flex items-center gap-8 md:gap-12 shrink-0" aria-hidden="true">
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">WolaNin Aesthetics</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">YY Aesthetics</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Laser Zentrum Heidelberg</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Asandra MD</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Lvate</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Our Real Success</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">High Key Agency</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Roof Plumber Sydney</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Ammanah Legal</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Scribble MH</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Miras</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Rawayat</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Laam</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Echelon Financial</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Yingli Solar</span>
+                        <span class="text-sm md:text-lg font-semibold tracking-wide text-neutral-700">Sundial Home</span>
                     </div>
-                    <!-- DATABRICKS VECTOR -->
-                    <div class="flex items-center justify-center w-28 md:w-36 h-12 text-neutral-800">
-                        <svg class="h-6 md:h-7 w-auto fill-current" viewBox="0 0 130 30"><path d="M17.4 0L3.1 8.2v16.5l14.3 8.3 14.3-8.3V8.2L17.4 0zm11 23L17.4 29.3 6.4 23V10.7l11-6.4 11 6.4V23zm-11-13.8L9.1 14l8.3 4.8 8.3-4.8-8.3-4.8z"/><text x="40" y="22" font-size="18" font-weight="bold" letter-spacing="-0.5">databricks</text></svg>
-                    </div>
-                    <!-- DROPBOX VECTOR -->
-                    <div class="flex items-center justify-center w-24 md:w-32 h-12 text-neutral-800">
-                        <svg class="h-5 md:h-6 w-auto fill-current" viewBox="0 0 120 28"><path d="M7.5 3.5L0 8.2l5.3 3.5 7.5-4.7L7.5 3.5zm0 13.5L0 21.7l5.3 3.5 7.5-4.7-5.3-3.5zm12.7-13.5l-7.5 4.7 7.5 4.7 7.5-4.7-7.5-4.7zm0 13.5l-7.5 4.7 7.5 4.7 7.5-4.7-7.5-4.7zM7.5 11.2L0 16l5.3 3.5 7.5-4.7-5.3-3.6zm12.7 0l-7.5 4.8 7.5 4.7 7.5-4.7-7.5-3.6z"/><text x="36" y="20" font-size="17" font-weight="bold" letter-spacing="0.2">Dropbox</text></svg>
-                    </div>
-                    <!-- DATABRICKS VECTOR -->
-                    <div class="flex items-center justify-center w-28 md:w-36 h-12 text-neutral-800">
-                        <svg class="h-6 md:h-7 w-auto fill-current" viewBox="0 0 130 30"><path d="M17.4 0L3.1 8.2v16.5l14.3 8.3 14.3-8.3V8.2L17.4 0zm11 23L17.4 29.3 6.4 23V10.7l11-6.4 11 6.4V23zm-11-13.8L9.1 14l8.3 4.8 8.3-4.8-8.3-4.8z"/><text x="40" y="22" font-size="18" font-weight="bold" letter-spacing="-0.5">databricks</text></svg>
-                    </div>
-                    <!-- DROPBOX VECTOR -->
-                    <div class="flex items-center justify-center w-24 md:w-32 h-12 text-neutral-800">
-                        <svg class="h-5 md:h-6 w-auto fill-current" viewBox="0 0 120 28"><path d="M7.5 3.5L0 8.2l5.3 3.5 7.5-4.7L7.5 3.5zm0 13.5L0 21.7l5.3 3.5 7.5-4.7-5.3-3.5zm12.7-13.5l-7.5 4.7 7.5 4.7 7.5-4.7-7.5-4.7zm0 13.5l-7.5 4.7 7.5 4.7 7.5-4.7-7.5-4.7zM7.5 11.2L0 16l5.3 3.5 7.5-4.7-5.3-3.6zm12.7 0l-7.5 4.8 7.5 4.7 7.5-4.7-7.5-3.6z"/><text x="36" y="20" font-size="17" font-weight="bold" letter-spacing="0.2">Dropbox</text></svg>
-                    </div>
-                    <!-- DATABRICKS VECTOR -->
-                    <div class="flex items-center justify-center w-28 md:w-36 h-12 text-neutral-800">
-                        <svg class="h-6 md:h-7 w-auto fill-current" viewBox="0 0 130 30"><path d="M17.4 0L3.1 8.2v16.5l14.3 8.3 14.3-8.3V8.2L17.4 0zm11 23L17.4 29.3 6.4 23V10.7l11-6.4 11 6.4V23zm-11-13.8L9.1 14l8.3 4.8 8.3-4.8-8.3-4.8z"/><text x="40" y="22" font-size="18" font-weight="bold" letter-spacing="-0.5">databricks</text></svg>
-                    </div>
-                    <!-- DROPBOX VECTOR -->
-                    <div class="flex items-center justify-center w-24 md:w-32 h-12 text-neutral-800">
-                        <svg class="h-5 md:h-6 w-auto fill-current" viewBox="0 0 120 28"><path d="M7.5 3.5L0 8.2l5.3 3.5 7.5-4.7L7.5 3.5zm0 13.5L0 21.7l5.3 3.5 7.5-4.7-5.3-3.5zm12.7-13.5l-7.5 4.7 7.5 4.7 7.5-4.7-7.5-4.7zm0 13.5l-7.5 4.7 7.5 4.7 7.5-4.7-7.5-4.7zM7.5 11.2L0 16l5.3 3.5 7.5-4.7-5.3-3.6zm12.7 0l-7.5 4.8 7.5 4.7 7.5-4.7-7.5-3.6z"/><text x="36" y="20" font-size="17" font-weight="bold" letter-spacing="0.2">Dropbox</text></svg>
-                    </div>
-                    
                 </div>
             </div>
         </section>
@@ -224,255 +226,255 @@
             
             <!-- ROW 1 (Projects 1 & 2) -->
             <div class="w-full min-h-[60vh] lg:h-screen grid grid-cols-1 lg:grid-cols-2 border-b border-zinc-200/30">
-                <!-- Project 1: Grubhub -->
-                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-200/40 bg-[#FF5200] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="grubhub">
+                <!-- Project 1: WolaNin Aesthetics -->
+                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-200/40 bg-[#FF5200] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="wolanin">
                     <div class="absolute inset-0 z-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-[1.02] overflow-hidden">
                         <div class="project-media-grid w-full h-full grid grid-cols-2 grid-rows-2 p-4 gap-4 bg-[#FF5200] transition-all duration-500">
-                            <div class="rounded-xl overflow-hidden shadow-md bg-[#e24900]"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Grubhub 1"></div>
-                            <div class="rounded-xl overflow-hidden shadow-md bg-[#e24900]"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Grubhub 2"></div>
-                            <div class="rounded-xl overflow-hidden shadow-md bg-[#e24900]"><img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Grubhub 3"></div>
-                            <div class="rounded-xl overflow-hidden shadow-md bg-[#e24900]"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Grubhub 4"></div>
+                            <div class="rounded-xl overflow-hidden shadow-md bg-[#e24900]"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="WolaNin Aesthetics"></div>
+                            <div class="rounded-xl overflow-hidden shadow-md bg-[#e24900]"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="WolaNin Aesthetics"></div>
+                            <div class="rounded-xl overflow-hidden shadow-md bg-[#e24900]"><img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="WolaNin Aesthetics"></div>
+                            <div class="rounded-xl overflow-hidden shadow-md bg-[#e24900]"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="WolaNin Aesthetics"></div>
                         </div>
                         <div class="project-blur-layer absolute inset-0 bg-black/50 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 flex flex-col justify-center px-6 md:px-16 text-left">
                             <div class="max-w-md space-y-4 transform translate-y-6 transition-transform duration-500 project-info-text">
-                                <span class="text-[10px] font-bold tracking-widest uppercase text-[#FF5200] bg-white px-3 py-1 rounded-full">Case Study</span>
-                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Scaling Appetites with Generative Video Systems</h3>
-                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">We helped Grubhub scale raw product imagery into high-performance AI-driven video multi-variants, delivering huge conversion lift across global digital ad pipelines.</p>
+                                <span class="text-[10px] font-bold tracking-widest uppercase text-[#FF5200] bg-white px-3 py-1 rounded-full">Live Project</span>
+                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Luxury aesthetics website with a refined booking experience</h3>
+                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">We built a polished WordPress experience for a premium aesthetics brand with clear service messaging and a smoother lead journey.</p>
                                 <div class="pt-2 flex items-center gap-4 text-[11px] font-bold tracking-wider uppercase text-white">
-                                    <div><span class="text-[#FF5200] mr-1.5">●</span> Production: 4.2k Assets</div>
-                                    <div><span class="text-[#FF5200] mr-1.5">●</span> Lift: +34% CTR</div>
+                                    <div><span class="text-[#FF5200] mr-1.5">●</span> WordPress</div>
+                                    <div><span class="text-[#FF5200] mr-1.5">●</span> Booking Flow</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="relative z-10 flex justify-between items-center w-full project-header-meta">
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">01 / Motion System</span>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">01 / WordPress</span>
                     </div>
                     <div class="custom-hover-circle absolute pointer-events-none opacity-0 scale-50 bg-white text-black font-semibold text-xs rounded-full hidden lg:flex items-center justify-center shadow-2xl z-30 transition-all duration-300 ease-out" style="width: 90px; height: 90px; transform: translate(-50%, -50%);">
-                        <span class="circle-text font-bold">Expand +</span>
+                        <span class="circle-text font-bold">Visit</span>
                     </div>
                     <div class="relative z-10 w-full pt-12 project-footer-meta">
-                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Grubhub +</h3>
-                        <p class="text-xs text-white/80 font-medium">Automated Creative Video Production Scale Systems</p>
+                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">WolaNin Aesthetics</h3>
+                        <a href="https://wolanin-aesthetics.de/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-white/80 font-medium hover:text-white transition">Open live site →</a>
                     </div>
                 </div>
 
-                <!-- Project 2: Microsoft -->
-                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden bg-[#00A4EF] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="microsoft">
+                <!-- Project 2: YY Aesthetics -->
+                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden bg-[#00A4EF] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="yyaesthetics">
                     <div class="absolute inset-0 z-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-[1.02] overflow-hidden">
                         <div class="project-media-grid w-full h-full bg-[#004B87] relative transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover brightness-95" alt="Microsoft Tech">
+                            <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover brightness-95" alt="YY Aesthetics">
                         </div>
                         <div class="project-blur-layer absolute inset-0 bg-black/50 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 flex flex-col justify-center px-6 md:px-16 text-left">
                             <div class="max-w-md space-y-4 transform translate-y-6 transition-transform duration-500 project-info-text">
-                                <span class="text-[10px] font-bold tracking-widest uppercase text-[#00A4EF] bg-white px-3 py-1 rounded-full">Case Study</span>
-                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Immersive Enterprise Spatial Ecosystems</h3>
-                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">Engineering next-generation multi-platform layout architectures for Microsoft teams. We integrated premium real-time spatial motion engine guidelines globally.</p>
+                                <span class="text-[10px] font-bold tracking-widest uppercase text-[#00A4EF] bg-white px-3 py-1 rounded-full">Live Project</span>
+                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">A modern multilingual site for a premium aesthetics practice</h3>
+                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">We delivered a polished multilingual WordPress build focused on trust, clarity, and conversion for an international aesthetic brand.</p>
                                 <div class="pt-2 flex items-center gap-4 text-[11px] font-bold tracking-wider uppercase text-white">
-                                    <div><span class="text-[#00A4EF] mr-1.5">●</span> Engine: WebGL / Core</div>
-                                    <div><span class="text-[#00A4EF] mr-1.5">●</span> Reach: 14M+ Active</div>
+                                    <div><span class="text-[#00A4EF] mr-1.5">●</span> WordPress</div>
+                                    <div><span class="text-[#00A4EF] mr-1.5">●</span> Multilingual</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="relative z-10 flex justify-between items-center w-full project-header-meta">
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">02 / Spatial Design</span>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">02 / WordPress</span>
                     </div>
                     <div class="custom-hover-circle absolute pointer-events-none opacity-0 scale-50 bg-white text-black font-semibold text-xs rounded-full hidden lg:flex items-center justify-center shadow-2xl z-30 transition-all duration-300 ease-out" style="width: 90px; height: 90px; transform: translate(-50%, -50%);">
-                        <span class="circle-text font-bold">Expand +</span>
+                        <span class="circle-text font-bold">Visit</span>
                     </div>
                     <div class="relative z-10 w-full pt-12 project-footer-meta">
-                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Microsoft +</h3>
-                        <p class="text-xs text-white/80 font-medium">Cross-Platform Experiences & Immersive Production Ops</p>
+                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">YY Aesthetics</h3>
+                        <a href="https://yyaesthetics.com/en/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-white/80 font-medium hover:text-white transition">Open live site →</a>
                     </div>
                 </div>
             </div>
 
             <!-- ROW 2 (Projects 3 & 4) -->
             <div class="w-full min-h-[60vh] lg:h-screen grid grid-cols-1 lg:grid-cols-2 border-b border-zinc-200/30">
-                <!-- Project 3: Notion -->
-                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-200/40 bg-[#111111] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="notion">
+                <!-- Project 3: Laser Zentrum Heidelberg -->
+                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-200/40 bg-[#111111] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="laserzentrum">
                     <div class="absolute inset-0 z-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-[1.02] overflow-hidden">
                         <div class="project-media-grid w-full h-full bg-[#222222] relative transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover opacity-80" alt="Notion Abstract">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover opacity-80" alt="Laser Zentrum Heidelberg">
                         </div>
                         <div class="project-blur-layer absolute inset-0 bg-black/60 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 flex flex-col justify-center px-6 md:px-16 text-left">
                             <div class="max-w-md space-y-4 transform translate-y-6 transition-transform duration-500 project-info-text">
-                                <span class="text-[10px] font-bold tracking-widest uppercase text-white bg-neutral-800 px-3 py-1 rounded-full">Product Launch</span>
-                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Visual Language Rebranding Strategy</h3>
-                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">Crafting minimalist bespoke dynamic vector illustration frameworks and modular components system to streamline user documentation assets globally.</p>
+                                <span class="text-[10px] font-bold tracking-widest uppercase text-white bg-neutral-800 px-3 py-1 rounded-full">Live Project</span>
+                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Medical website crafted for trust and clarity</h3>
+                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">We shaped a clean, modern WordPress website for a medical clinic focused on patient confidence and local discovery.</p>
                                 <div class="pt-2 flex items-center gap-4 text-[11px] font-bold tracking-wider uppercase text-white">
-                                    <div><span class="text-neutral-400 mr-1.5">●</span> Assets: 1.8k Vectors</div>
-                                    <div><span class="text-neutral-400 mr-1.5">●</span> Growth: +45% Adoption</div>
+                                    <div><span class="text-neutral-400 mr-1.5">●</span> WordPress</div>
+                                    <div><span class="text-neutral-400 mr-1.5">●</span> Medical</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="relative z-10 flex justify-between items-center w-full project-header-meta">
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">03 / Visual Language</span>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">03 / WordPress</span>
                     </div>
                     <div class="custom-hover-circle absolute pointer-events-none opacity-0 scale-50 bg-white text-black font-semibold text-xs rounded-full hidden lg:flex items-center justify-center shadow-2xl z-30 transition-all duration-300 ease-out" style="width: 90px; height: 90px; transform: translate(-50%, -50%);">
-                        <span class="circle-text font-bold">Expand +</span>
+                        <span class="circle-text font-bold">Visit</span>
                     </div>
                     <div class="relative z-10 w-full pt-12 project-footer-meta">
-                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Notion +</h3>
-                        <p class="text-xs text-white/80 font-medium">Bespoke Structural Framework Illustration Systems</p>
+                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Laser Zentrum Heidelberg</h3>
+                        <a href="https://laserzentrum-heidelberg.de/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-white/80 font-medium hover:text-white transition">Open live site →</a>
                     </div>
                 </div>
 
-                <!-- Project 4: Stripe -->
-                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden bg-[#635BFF] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="stripe">
+                <!-- Project 4: Miras -->
+                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden bg-[#635BFF] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="miras">
                     <div class="absolute inset-0 z-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-[1.02] overflow-hidden">
                         <div class="project-media-grid w-full h-full bg-[#4d44e0] relative transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover brightness-90" alt="Stripe Gradient">
+                            <img src="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover brightness-90" alt="Miras">
                         </div>
                         <div class="project-blur-layer absolute inset-0 bg-black/50 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 flex flex-col justify-center px-6 md:px-16 text-left">
                             <div class="max-w-md space-y-4 transform translate-y-6 transition-transform duration-500 project-info-text">
-                                <span class="text-[10px] font-bold tracking-widest uppercase text-[#635BFF] bg-white px-3 py-1 rounded-full">Interactive Dev</span>
-                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">High-Converting Immersive Interactive Dashboards</h3>
-                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">Revamping data rendering visualization interfaces via buttery-smooth WebGL shaders, driving retention metrics up for enterprise financial reporting.</p>
+                                <span class="text-[10px] font-bold tracking-widest uppercase text-[#635BFF] bg-white px-3 py-1 rounded-full">Live Project</span>
+                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Shopify storefront crafted for a fashion-first brand</h3>
+                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">We helped shape a strong Shopify experience focused on product storytelling, visual clarity, and smoother conversions.</p>
                                 <div class="pt-2 flex items-center gap-4 text-[11px] font-bold tracking-wider uppercase text-white">
-                                    <div><span class="text-[#635BFF] mr-1.5">●</span> Technology: PixiJS Engine</div>
-                                    <div><span class="text-[#635BFF] mr-1.5">●</span> Speed: 60 FPS Fluid</div>
+                                    <div><span class="text-[#635BFF] mr-1.5">●</span> Shopify</div>
+                                    <div><span class="text-[#635BFF] mr-1.5">●</span> Conversion</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="relative z-10 flex justify-between items-center w-full project-header-meta">
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">04 / Interaction Pipeline</span>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">04 / Shopify</span>
                     </div>
                     <div class="custom-hover-circle absolute pointer-events-none opacity-0 scale-50 bg-white text-black font-semibold text-xs rounded-full hidden lg:flex items-center justify-center shadow-2xl z-30 transition-all duration-300 ease-out" style="width: 90px; height: 90px; transform: translate(-50%, -50%);">
-                        <span class="circle-text font-bold">Expand +</span>
+                        <span class="circle-text font-bold">Visit</span>
                     </div>
                     <div class="relative z-10 w-full pt-12 project-footer-meta">
-                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Stripe +</h3>
-                        <p class="text-xs text-white/80 font-medium">B2B Product Motion Identity & Enterprise UI Systems</p>
+                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Miras</h3>
+                        <a href="https://miras.com.pk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-white/80 font-medium hover:text-white transition">Open live site →</a>
                     </div>
                 </div>
             </div>
 
             <!-- ROW 3 (Projects 5 & 6) -->
             <div class="w-full min-h-[60vh] lg:h-screen grid grid-cols-1 lg:grid-cols-2 border-b border-zinc-200/30">
-                <!-- Project 5: Airbnb -->
-                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-200/40 bg-[#FF5A5F] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="airbnb">
+                <!-- Project 5: Rawayat -->
+                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-200/40 bg-[#FF5A5F] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="rawayat">
                     <div class="absolute inset-0 z-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-[1.02] overflow-hidden">
                         <div class="project-media-grid w-full h-full bg-[#e14f53] relative transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Airbnb Experience">
+                            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Rawayat">
                         </div>
                         <div class="project-blur-layer absolute inset-0 bg-black/50 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 flex flex-col justify-center px-6 md:px-16 text-left">
                             <div class="max-w-md space-y-4 transform translate-y-6 transition-transform duration-500 project-info-text">
-                                <span class="text-[10px] font-bold tracking-widest uppercase text-[#FF5A5F] bg-white px-3 py-1 rounded-full">Creative Campaign</span>
-                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Immersive Travel Experiences Media Launch</h3>
-                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">Produced high-end targeted visual narrative systems across premium international digital billboard displays and social formats.</p>
+                                <span class="text-[10px] font-bold tracking-widest uppercase text-[#FF5A5F] bg-white px-3 py-1 rounded-full">Live Project</span>
+                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Lifestyle storefront with stronger product presentation</h3>
+                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">We shaped a polished Shopify build that made the brand feel more premium while improving product focus and shopping clarity.</p>
                                 <div class="pt-2 flex items-center gap-4 text-[11px] font-bold tracking-wider uppercase text-white">
-                                    <div><span class="text-[#FF5A5F] mr-1.5">●</span> Views: 85M+ Global</div>
-                                    <div><span class="text-[#FF5A5F] mr-1.5">●</span> Click-Through: +28%</div>
+                                    <div><span class="text-[#FF5A5F] mr-1.5">●</span> Shopify</div>
+                                    <div><span class="text-[#FF5A5F] mr-1.5">●</span> Lifestyle</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="relative z-10 flex justify-between items-center w-full project-header-meta">
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">05 / Global Campaign</span>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">05 / Shopify</span>
                     </div>
                     <div class="custom-hover-circle absolute pointer-events-none opacity-0 scale-50 bg-white text-black font-semibold text-xs rounded-full hidden lg:flex items-center justify-center shadow-2xl z-30 transition-all duration-300 ease-out" style="width: 90px; height: 90px; transform: translate(-50%, -50%);">
-                        <span class="circle-text font-bold">Expand +</span>
+                        <span class="circle-text font-bold">Visit</span>
                     </div>
                     <div class="relative z-10 w-full pt-12 project-footer-meta">
-                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Airbnb +</h3>
-                        <p class="text-xs text-white/80 font-medium">Immersive Localized Storytelling & Content Automation</p>
+                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Rawayat</h3>
+                        <a href="https://rawayat.com.pk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-white/80 font-medium hover:text-white transition">Open live site →</a>
                     </div>
                 </div>
 
-                <!-- Project 6: Duolingo -->
-                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden bg-[#58CC02] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="duolingo">
+                <!-- Project 6: Laam -->
+                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden bg-[#58CC02] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="laam">
                     <div class="absolute inset-0 z-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-[1.02] overflow-hidden">
                         <div class="project-media-grid w-full h-full bg-[#4cb102] relative transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Duolingo Culture">
+                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Laam">
                         </div>
                         <div class="project-blur-layer absolute inset-0 bg-black/50 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 flex flex-col justify-center px-6 md:px-16 text-left">
                             <div class="max-w-md space-y-4 transform translate-y-6 transition-transform duration-500 project-info-text">
-                                <span class="text-[10px] font-bold tracking-widest uppercase text-[#58CC02] bg-white px-3 py-1 rounded-full">Gamification</span>
-                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Character Character Animation Core System</h3>
-                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">Developed lightning-fast vector-based Lottie motion systems for interactive mascot prompts, scaling multi-language engagement pathways seamlessly.</p>
+                                <span class="text-[10px] font-bold tracking-widest uppercase text-[#58CC02] bg-white px-3 py-1 rounded-full">Live Project</span>
+                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">A clean, conversion-focused retail storefront</h3>
+                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">We built a streamlined Shopify experience that made the brand feel modern while improving browsing and purchase flow.</p>
                                 <div class="pt-2 flex items-center gap-4 text-[11px] font-bold tracking-wider uppercase text-white">
-                                    <div><span class="text-[#58CC02] mr-1.5">●</span> Format: Lottie Vector JSON</div>
-                                    <div><span class="text-[#58CC02] mr-1.5">●</span> Retention: +19% Daily</div>
+                                    <div><span class="text-[#58CC02] mr-1.5">●</span> Shopify</div>
+                                    <div><span class="text-[#58CC02] mr-1.5">●</span> Retail</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="relative z-10 flex justify-between items-center w-full project-header-meta">
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">06 / Character Micro-Motion</span>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">06 / Shopify</span>
                     </div>
                     <div class="custom-hover-circle absolute pointer-events-none opacity-0 scale-50 bg-white text-black font-semibold text-xs rounded-full hidden lg:flex items-center justify-center shadow-2xl z-30 transition-all duration-300 ease-out" style="width: 90px; height: 90px; transform: translate(-50%, -50%);">
-                        <span class="circle-text font-bold">Expand +</span>
+                        <span class="circle-text font-bold">Visit</span>
                     </div>
                     <div class="relative z-10 w-full pt-12 project-footer-meta">
-                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Duolingo +</h3>
-                        <p class="text-xs text-white/80 font-medium">Bespoke In-App Engagement Systems & Character Vector Assets</p>
+                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Laam</h3>
+                        <a href="https://laam.pk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-white/80 font-medium hover:text-white transition">Open live site →</a>
                     </div>
                 </div>
             </div>
 
             <!-- ROW 4 (Projects 7 & 8) -->
             <div class="w-full min-h-[60vh] lg:h-screen grid grid-cols-1 lg:grid-cols-2">
-                <!-- Project 7: Nike -->
-                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-200/40 bg-[#111111] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="nike">
+                <!-- Project 7: Asandra MD -->
+                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-200/40 bg-[#111111] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="asandra">
                     <div class="absolute inset-0 z-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-[1.02] overflow-hidden">
                         <div class="project-media-grid w-full h-full bg-[#1c1c1c] relative transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover grayscale brightness-90 contrast-125" alt="Nike Apparel">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover grayscale brightness-90 contrast-125" alt="Asandra MD">
                         </div>
                         <div class="project-blur-layer absolute inset-0 bg-black/60 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 flex flex-col justify-center px-6 md:px-16 text-left">
                             <div class="max-w-md space-y-4 transform translate-y-6 transition-transform duration-500 project-info-text">
-                                <span class="text-[10px] font-bold tracking-widest uppercase text-white bg-neutral-800 px-3 py-1 rounded-full">3D Production</span>
-                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Next-Gen Cinematic Product Rollouts</h3>
-                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">We executed ultra-premium 3D kinetic video experiences for high-velocity seasonal footwear pipelines, syncing physics assets for global distributions.</p>
+                                <span class="text-[10px] font-bold tracking-widest uppercase text-white bg-neutral-800 px-3 py-1 rounded-full">Live Project</span>
+                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">A custom medical website built with strong trust signals</h3>
+                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">We delivered a polished custom website experience for a healthcare brand with strong messaging, authority, and conversion focus.</p>
                                 <div class="pt-2 flex items-center gap-4 text-[11px] font-bold tracking-wider uppercase text-white">
-                                    <div><span class="text-neutral-400 mr-1.5">●</span> Production: 12 Web Blocks</div>
-                                    <div><span class="text-neutral-400 mr-1.5">●</span> Engagement: +52% Time</div>
+                                    <div><span class="text-neutral-400 mr-1.5">●</span> Custom</div>
+                                    <div><span class="text-neutral-400 mr-1.5">●</span> Healthcare</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="relative z-10 flex justify-between items-center w-full project-header-meta">
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">07 / Commercial Motion</span>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">07 / Custom</span>
                     </div>
                     <div class="custom-hover-circle absolute pointer-events-none opacity-0 scale-50 bg-white text-black font-semibold text-xs rounded-full hidden lg:flex items-center justify-center shadow-2xl z-30 transition-all duration-300 ease-out" style="width: 90px; height: 90px; transform: translate(-50%, -50%);">
-                        <span class="circle-text font-bold">Expand +</span>
+                        <span class="circle-text font-bold">Visit</span>
                     </div>
                     <div class="relative z-10 w-full pt-12 project-footer-meta">
-                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Nike +</h3>
-                        <p class="text-xs text-white/80 font-medium">Bespoke 3D Kinetic Simulation Ads & Seasonal Asset Packages</p>
+                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Asandra MD</h3>
+                        <a href="https://asandra-md.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-white/80 font-medium hover:text-white transition">Open live site →</a>
                     </div>
                 </div>
 
-                <!-- Project 8: Audi -->
-                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden bg-[#0A0A0A] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="audi">
+                <!-- Project 8: Echelon Financial -->
+                <div class="project-column group relative h-[65vh] lg:h-full overflow-hidden bg-[#0A0A0A] flex flex-col justify-between p-8 md:p-14 text-white cursor-pointer" data-project="echelon">
                     <div class="absolute inset-0 z-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-[1.02] overflow-hidden">
                         <div class="project-media-grid w-full h-full bg-[#151515] relative transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Audi Vehicle">
+                            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Echelon Financial">
                         </div>
                         <div class="project-blur-layer absolute inset-0 bg-black/60 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 flex flex-col justify-center px-6 md:px-16 text-left">
                             <div class="max-w-md space-y-4 transform translate-y-6 transition-transform duration-500 project-info-text">
-                                <span class="text-[10px] font-bold tracking-widest uppercase text-zinc-400 bg-white/10 px-3 py-1 rounded-full">Automotive Digital</span>
-                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">Immersive EV Interface Launch Strategy</h3>
-                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">Developed interactive configurator rendering layouts powered by dynamic GSAP scroll-triggered animation layers, mapping zero latency visual assets.</p>
+                                <span class="text-[10px] font-bold tracking-widest uppercase text-zinc-400 bg-white/10 px-3 py-1 rounded-full">Live Project</span>
+                                <h3 class="text-2xl md:text-4xl font-normal text-white font-serif">A premium custom website for a financial services brand</h3>
+                                <p class="text-xs md:text-sm text-zinc-200 leading-relaxed font-light">We built a polished experience focused on trust, authority, and clear conversion paths for a financial services client.</p>
                                 <div class="pt-2 flex items-center gap-4 text-[11px] font-bold tracking-wider uppercase text-white">
-                                    <div><span class="text-zinc-500 mr-1.5">●</span> Target: Luxury Segments</div>
-                                    <div><span class="text-zinc-500 mr-1.5">●</span> Conversions: +41% Pre-orders</div>
+                                    <div><span class="text-zinc-500 mr-1.5">●</span> Custom</div>
+                                    <div><span class="text-zinc-500 mr-1.5">●</span> Finance</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="relative z-10 flex justify-between items-center w-full project-header-meta">
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">08 / Interactive Configurator</span>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">08 / Custom</span>
                     </div>
                     <div class="custom-hover-circle absolute pointer-events-none opacity-0 scale-50 bg-white text-black font-semibold text-xs rounded-full hidden lg:flex items-center justify-center shadow-2xl z-30 transition-all duration-300 ease-out" style="width: 90px; height: 90px; transform: translate(-50%, -50%);">
-                        <span class="circle-text font-bold">Expand +</span>
+                        <span class="circle-text font-bold">Visit</span>
                     </div>
                     <div class="relative z-10 w-full pt-12 project-footer-meta">
-                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Audi +</h3>
-                        <p class="text-xs text-white/80 font-medium">Interactive Digital Spatial Configuration Modules & Production pipelines</p>
+                        <h3 class="text-2xl md:text-3xl tracking-tight font-normal mb-1">Echelon Financial</h3>
+                        <a href="https://echelonfinancial.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs text-white/80 font-medium hover:text-white transition">Open live site →</a>
                     </div>
                 </div>
             </div>

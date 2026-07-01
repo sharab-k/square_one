@@ -244,40 +244,94 @@
         </h2>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 md:px-12 relative overflow-hidden flex flex-col">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative overflow-hidden flex flex-col space-y-6 md:space-y-12">
         
         <div class="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
         <div class="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
 
         <div class="brand-track-container w-full overflow-hidden flex">
-            <div class="brand-marquee-row-right flex items-center space-x-10 md:space-x-20 w-max whitespace-nowrap py-1">
+            <div class="brand-marquee-row-right flex items-center space-x-12 md:space-x-20 w-max whitespace-nowrap py-2">
                 
-                <div class="flex items-center space-x-10 md:space-x-20 shrink-0">
-                    <span class="text-base md:text-xl font-bold tracking-wide text-neutral-700 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">Colgate</span>
-                    <span class="text-lg md:text-2xl font-bold tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">booking.com</span>
-                    <span class="text-lg md:text-2xl font-extrabold tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">BCG</span>
-                    <span class="text-lg md:text-2xl font-semibold tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">coinbase</span>
-                    <span class="text-lg md:text-2xl font-black tracking-tight text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">databricks</span>
-                    <span class="text-lg md:text-2xl font-bold tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">Dropbox</span>
-                    <span class="text-lg md:text-2xl font-black italic tracking-wide text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">INTUIT</span>
-                    <span class="text-lg md:text-2xl font-black tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">lyft</span>
-                    <span class="text-sm md:text-lg font-extrabold tracking-widest uppercase text-neutral-700 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">reddit</span>
-                    <span class="text-lg md:text-2xl font-semibold tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">Rakuten</span>
-                    <span class="text-lg md:text-2xl font-bold tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">MasterClass</span>
+                <div class="flex items-center space-x-10 md:space-x-16 shrink-0">
+                    <span class="text-base md:text-xl font-medium tracking-wide text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">WolaNin <span class="font-light italic text-neutral-500">Aesthetics</span></span>
+                    <span class="text-lg md:text-2xl font-black italic tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-serif">YY.</span>
+                    <span class="text-xs md:text-base font-bold tracking-widest uppercase text-neutral-700 bg-neutral-100 px-2 py-0.5 rounded opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Laser Zentrum</span>
+                    <span class="text-lg md:text-2xl font-semibold tracking-tight text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Asandra<span class="font-normal text-sm align-super">MD</span></span>
+                    <span class="text-xl md:text-3xl font-extrabold tracking-tighter text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-mono lowercase">lvate</span>
+                    <span class="text-base md:text-xl font-bold tracking-wide text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans border-b-2 border-neutral-400">Our Real Success</span>
+                    <span class="text-base md:text-xl font-black tracking-tight text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans uppercase">High Key</span>
+                    <span class="text-sm md:text-lg font-medium tracking-normal text-neutral-700 opacity-85 hover:opacity-100 transition-opacity duration-300 font-serif">Roof Plumber <span class="font-bold text-neutral-900">Sydney</span></span>
+                    <span class="text-base md:text-xl font-semibold tracking-widest uppercase text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Ammanah</span>
+                    <span class="text-lg md:text-2xl font-light tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-mono">scribble_mh</span>
+                    <span class="text-xl md:text-3xl font-black text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-serif italic">Miras</span>
+                    <span class="text-base md:text-xl font-bold tracking-widest uppercase text-neutral-700 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Rawayat</span>
+                    <span class="text-2xl md:text-4xl font-extralight tracking-widest text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-sans">LAAM</span>
+                    <span class="text-base md:text-xl font-extrabold tracking-tight text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Echelon<span class="font-light text-neutral-500">Financial</span></span>
+                    <span class="text-lg md:text-2xl font-bold tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">yingli <span class="font-light">solar</span></span>
+                    <span class="text-base md:text-xl font-medium italic tracking-wide text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-serif">Sundial Home</span>
                 </div>
 
-                <div class="flex items-center space-x-10 md:space-x-20 shrink-0" aria-hidden="true">
-                    <span class="text-base md:text-xl font-bold tracking-wide text-neutral-700 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">Colgate</span>
-                    <span class="text-lg md:text-2xl font-bold tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">booking.com</span>
-                    <span class="text-lg md:text-2xl font-extrabold tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">BCG</span>
-                    <span class="text-lg md:text-2xl font-semibold tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">coinbase</span>
-                    <span class="text-lg md:text-2xl font-black tracking-tight text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">databricks</span>
-                    <span class="text-lg md:text-2xl font-bold tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">Dropbox</span>
-                    <span class="text-lg md:text-2xl font-black italic tracking-wide text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">INTUIT</span>
-                    <span class="text-lg md:text-2xl font-black tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">lyft</span>
-                    <span class="text-sm md:text-lg font-extrabold tracking-widest uppercase text-neutral-700 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">reddit</span>
-                    <span class="text-lg md:text-2xl font-semibold tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">Rakuten</span>
-                    <span class="text-lg md:text-2xl font-bold tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans">MasterClass</span>
+                <div class="flex items-center space-x-10 md:space-x-16 shrink-0" aria-hidden="true">
+                    <span class="text-base md:text-xl font-medium tracking-wide text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">WolaNin <span class="font-light italic text-neutral-500">Aesthetics</span></span>
+                    <span class="text-lg md:text-2xl font-black italic tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-serif">YY.</span>
+                    <span class="text-xs md:text-base font-bold tracking-widest uppercase text-neutral-700 bg-neutral-100 px-2 py-0.5 rounded opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Laser Zentrum</span>
+                    <span class="text-lg md:text-2xl font-semibold tracking-tight text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Asandra<span class="font-normal text-sm align-super">MD</span></span>
+                    <span class="text-xl md:text-3xl font-extrabold tracking-tighter text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-mono lowercase">lvate</span>
+                    <span class="text-base md:text-xl font-bold tracking-wide text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans border-b-2 border-neutral-400">Our Real Success</span>
+                    <span class="text-base md:text-xl font-black tracking-tight text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans uppercase">High Key</span>
+                    <span class="text-sm md:text-lg font-medium tracking-normal text-neutral-700 opacity-85 hover:opacity-100 transition-opacity duration-300 font-serif">Roof Plumber <span class="font-bold text-neutral-900">Sydney</span></span>
+                    <span class="text-base md:text-xl font-semibold tracking-widest uppercase text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Ammanah</span>
+                    <span class="text-lg md:text-2xl font-light tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-mono">scribble_mh</span>
+                    <span class="text-xl md:text-3xl font-black text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-serif italic">Miras</span>
+                    <span class="text-base md:text-xl font-bold tracking-widest uppercase text-neutral-700 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Rawayat</span>
+                    <span class="text-2xl md:text-4xl font-extralight tracking-widest text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-sans">LAAM</span>
+                    <span class="text-base md:text-xl font-extrabold tracking-tight text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Echelon<span class="font-light text-neutral-500">Financial</span></span>
+                    <span class="text-lg md:text-2xl font-bold tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">yingli <span class="font-light">solar</span></span>
+                    <span class="text-base md:text-xl font-medium italic tracking-wide text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-serif">Sundial Home</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="brand-track-container w-full overflow-hidden flex">
+            <div class="brand-marquee-row-left flex items-center space-x-12 md:space-x-20 w-max whitespace-nowrap py-2">
+                
+                <div class="flex items-center space-x-10 md:space-x-16 shrink-0">
+                    <span class="text-base md:text-xl font-medium italic tracking-wide text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-serif">Sundial Home</span>
+                    <span class="text-base md:text-xl font-bold tracking-widest uppercase text-neutral-700 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Rawayat</span>
+                    <span class="text-base md:text-xl font-semibold tracking-widest uppercase text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Ammanah</span>
+                    <span class="text-base md:text-xl font-bold tracking-wide text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans border-b-2 border-neutral-400">Our Real Success</span>
+                    <span class="text-lg md:text-2xl font-semibold tracking-tight text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Asandra<span class="font-normal text-sm align-super">MD</span></span>
+                    <span class="text-base md:text-xl font-medium tracking-wide text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">WolaNin <span class="font-light italic text-neutral-500">Aesthetics</span></span>
+                    <span class="text-lg md:text-2xl font-bold tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">yingli <span class="font-light">solar</span></span>
+                    <span class="text-2xl md:text-4xl font-extralight tracking-widest text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-sans">LAAM</span>
+                    <span class="text-lg md:text-2xl font-light tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-mono">scribble_mh</span>
+                    <span class="text-base md:text-xl font-black tracking-tight text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans uppercase">High Key</span>
+                    <span class="text-xl md:text-3xl font-extrabold tracking-tighter text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-mono lowercase">lvate</span>
+                    <span class="text-lg md:text-2xl font-black italic tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-serif">YY.</span>
+                    <span class="text-base md:text-xl font-extrabold tracking-tight text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Echelon<span class="font-light text-neutral-500">Financial</span></span>
+                    <span class="text-xl md:text-3xl font-black text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-serif italic">Miras</span>
+                    <span class="text-sm md:text-lg font-medium tracking-normal text-neutral-700 opacity-85 hover:opacity-100 transition-opacity duration-300 font-serif">Roof Plumber <span class="font-bold text-neutral-900">Sydney</span></span>
+                    <span class="text-xs md:text-base font-bold tracking-widest uppercase text-neutral-700 bg-neutral-100 px-2 py-0.5 rounded opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Laser Zentrum</span>
+                </div>
+
+                <div class="flex items-center space-x-10 md:space-x-16 shrink-0" aria-hidden="true">
+                    <span class="text-base md:text-xl font-medium italic tracking-wide text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-serif">Sundial Home</span>
+                    <span class="text-base md:text-xl font-bold tracking-widest uppercase text-neutral-700 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Rawayat</span>
+                    <span class="text-base md:text-xl font-semibold tracking-widest uppercase text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Ammanah</span>
+                    <span class="text-base md:text-xl font-bold tracking-wide text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-sans border-b-2 border-neutral-400">Our Real Success</span>
+                    <span class="text-lg md:text-2xl font-semibold tracking-tight text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Asandra<span class="font-normal text-sm align-super">MD</span></span>
+                    <span class="text-base md:text-xl font-medium tracking-wide text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">WolaNin <span class="font-light italic text-neutral-500">Aesthetics</span></span>
+                    <span class="text-lg md:text-2xl font-bold tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">yingli <span class="font-light">solar</span></span>
+                    <span class="text-2xl md:text-4xl font-extralight tracking-widest text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-sans">LAAM</span>
+                    <span class="text-lg md:text-2xl font-light tracking-tight text-neutral-800 opacity-85 hover:opacity-100 transition-opacity duration-300 font-mono">scribble_mh</span>
+                    <span class="text-base md:text-xl font-black tracking-tight text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans uppercase">High Key</span>
+                    <span class="text-xl md:text-3xl font-extrabold tracking-tighter text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-mono lowercase">lvate</span>
+                    <span class="text-lg md:text-2xl font-black italic tracking-tighter text-neutral-900 opacity-90 hover:opacity-100 transition-opacity duration-300 font-serif">YY.</span>
+                    <span class="text-base md:text-xl font-extrabold tracking-tight text-neutral-800 opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Echelon<span class="font-light text-neutral-500">Financial</span></span>
+                    <span class="text-xl md:text-3xl font-black text-neutral-900 opacity-95 hover:opacity-100 transition-opacity duration-300 font-serif italic">Miras</span>
+                    <span class="text-sm md:text-lg font-medium tracking-normal text-neutral-700 opacity-85 hover:opacity-100 transition-opacity duration-300 font-serif">Roof Plumber <span class="font-bold text-neutral-900">Sydney</span></span>
+                    <span class="text-xs md:text-base font-bold tracking-widest uppercase text-neutral-700 bg-neutral-100 px-2 py-0.5 rounded opacity-90 hover:opacity-100 transition-opacity duration-300 font-sans">Laser Zentrum</span>
                 </div>
 
             </div>
