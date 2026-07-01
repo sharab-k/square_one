@@ -177,6 +177,8 @@
 
     </main>
 
+    @include('components.contact-emails', ['variant' => 'dark'])
+
     <section class="w-full bg-white text-neutral-900 py-14 md:py-20 overflow-hidden relative">
     
    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center mb-10 md:mb-12">
@@ -1489,6 +1491,5 @@
     </script>
     <script src="{{ asset('assets/js/matrix-animation.js') }}"></script>
     <script src="{{ asset('assets/js/matrix-tabs.js') }}"></script>
-
 </body>
 </html>

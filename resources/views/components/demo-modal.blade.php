@@ -8,10 +8,17 @@
             </svg>
         </button>
 
-        <div class="text-center mb-10">
+        <div class="text-center mb-8">
             <h2 class="text-3xl md:text-4xl tracking-tight text-neutral-900">
                 Book a demo <span class="font-light italic text-neutral-500">with our experts</span>
             </h2>
+        </div>
+
+        <div class="mb-8 rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-4 text-center text-sm text-neutral-600">
+            Prefer email? Reach us directly at
+            <a href="mailto:Squareone474@gmail.com" class="ml-1 font-semibold text-neutral-900 underline decoration-neutral-300 underline-offset-4">Squareone474@gmail.com</a>
+            or
+            <a href="mailto:Squareonewww.hot@gmail.com" class="ml-1 font-semibold text-neutral-900 underline decoration-neutral-300 underline-offset-4">Squareonewww.hot@gmail.com</a>
         </div>
 
         <!-- Success Message -->

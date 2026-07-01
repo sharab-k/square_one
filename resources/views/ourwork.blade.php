@@ -554,6 +554,8 @@
         
     </main>
 
+    @include('components.contact-emails', ['variant' => 'light'])
+
     <!-- PRE-FOOTER CTA MATRIX SECTION -->
     <section id="pre-footer-cta-matrix" class="w-full bg-black text-white py-28 md:py-40 overflow-hidden relative flex items-center justify-center">
         <div class="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
