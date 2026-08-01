@@ -481,6 +481,228 @@
 
         </section>
 
+        <!-- SECTION 4: 🎨 GRAPHIC DESIGN & CREATIVE SHOWCASE GALLERY -->
+        <section id="graphic-design-showcase" class="w-full bg-[#FCFDFA] py-20 md:py-28 border-t border-zinc-200/50 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+                
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+                    <div class="space-y-4 max-w-2xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 border border-zinc-200/60 text-zinc-800 text-[10px] md:text-xs font-bold tracking-widest uppercase">
+                            <span class="w-2 h-2 rounded-full bg-black"></span>
+                            <span>Graphic & Brand Design</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-950 leading-tight">
+                            Visual Identities, Posters <br class="hidden sm:inline">
+                            <span class="italic font-serif font-light text-zinc-500">& Creative Collateral</span>
+                        </h2>
+                        <p class="text-xs md:text-sm text-neutral-500 leading-relaxed font-normal">
+                            Explore our portfolio of brand graphics, social media artwork, posters, and marketing visuals crafted for modern brands.
+                        </p>
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div class="flex items-center flex-wrap gap-2 text-xs font-semibold shrink-0">
+                        <button class="graphic-filter-btn active bg-black text-white px-4 py-2 rounded-full transition-all duration-300 shadow-sm" data-category="all">
+                            All Work (28)
+                        </button>
+                        <button class="graphic-filter-btn bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-4 py-2 rounded-full transition-all duration-300" data-category="branding">
+                            Branding
+                        </button>
+                        <button class="graphic-filter-btn bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-4 py-2 rounded-full transition-all duration-300" data-category="social">
+                            Social Media
+                        </button>
+                        <button class="graphic-filter-btn bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-4 py-2 rounded-full transition-all duration-300" data-category="marketing">
+                            Marketing & Posters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Graphic Design Grid Gallery (28 Items) -->
+                <div id="graphic-design-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    @for ($i = 1; $i <= 28; $i++)
+                        @php
+                            $categories = ['branding', 'social', 'marketing'];
+                            $cat = $categories[($i - 1) % 3];
+                            $catName = match($cat) {
+                                'branding' => 'Branding & Identity',
+                                'social' => 'Social Media Art',
+                                'marketing' => 'Poster & Marketing',
+                            };
+                        @endphp
+                        <div class="graphic-item group relative bg-zinc-100 rounded-2xl md:rounded-3xl overflow-hidden border border-zinc-200/60 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-1" 
+                             data-category="{{ $cat }}" 
+                             data-index="{{ $i - 1 }}"
+                             data-src="{{ asset('assets/img/graphics/graphic-' . $i . '.jpg') }}"
+                             data-title="Creative Artwork #{{ sprintf('%02d', $i) }}"
+                             data-tag="{{ $catName }}">
+                            
+                            <!-- Image Container -->
+                            <div class="w-full aspect-[4/5] relative overflow-hidden bg-zinc-200">
+                                <img src="{{ asset('assets/img/graphics/graphic-' . $i . '.jpg') }}" 
+                                     alt="Graphic Design Artwork {{ $i }}" 
+                                     loading="lazy"
+                                     class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out">
+                                
+                                <!-- Hover Overlay Glass Layer -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-5 text-white">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[10px] font-bold tracking-widest uppercase bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                                            {{ $catName }}
+                                        </span>
+                                        <div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <h4 class="text-base font-semibold tracking-tight text-white">Graphic Work #{{ sprintf('%02d', $i) }}</h4>
+                                        <p class="text-[11px] text-zinc-300 font-light flex items-center gap-1">Click to view full preview →</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GRAPHIC LIGHTBOX PREVIEW MODAL -->
+        <div id="graphic-lightbox" class="fixed inset-0 z-[1000] bg-black/95 backdrop-blur-xl hidden flex-col justify-between p-4 md:p-8 transition-opacity duration-300">
+            <!-- Modal Header -->
+            <div class="w-full max-w-7xl mx-auto flex items-center justify-between text-white border-b border-zinc-800 pb-4 z-10">
+                <div class="flex items-center gap-3">
+                    <span id="lightbox-tag" class="text-[10px] md:text-xs font-bold tracking-widest uppercase bg-zinc-800 text-zinc-300 px-3 py-1 rounded-full">
+                        Graphic Design
+                    </span>
+                    <span id="lightbox-counter" class="text-xs text-zinc-400 font-medium">
+                        1 of 28
+                    </span>
+                </div>
+                <button id="lightbox-close" class="p-2 text-zinc-400 hover:text-white transition rounded-full hover:bg-zinc-900 focus:outline-none" aria-label="Close modal">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <!-- Modal Body (Centered Image & Navigation) -->
+            <div class="relative w-full flex-grow flex items-center justify-center py-4 px-2 overflow-hidden">
+                <!-- Previous Button -->
+                <button id="lightbox-prev" class="absolute left-2 md:left-6 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center backdrop-blur-md border border-white/10 transition hover:scale-110 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+
+                <!-- Image View -->
+                <div class="max-w-4xl max-h-[80vh] flex items-center justify-center p-2">
+                    <img id="lightbox-img" src="" alt="Graphic Preview" class="max-w-full max-h-[78vh] object-contain rounded-xl shadow-2xl transition-all duration-300 scale-95">
+                </div>
+
+                <!-- Next Button -->
+                <button id="lightbox-next" class="absolute right-2 md:right-6 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center backdrop-blur-md border border-white/10 transition hover:scale-110 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="w-full max-w-7xl mx-auto flex items-center justify-between text-zinc-400 text-xs border-t border-zinc-800 pt-4 z-10">
+                <span id="lightbox-title" class="font-medium text-white text-sm md:text-base">Creative Artwork</span>
+                <span class="hidden md:inline text-zinc-500">Press ESC to close • Use ← → arrows to navigate</span>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const filterBtns = document.querySelectorAll('.graphic-filter-btn');
+                const graphicItems = document.querySelectorAll('.graphic-item');
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        filterBtns.forEach(b => {
+                            b.classList.remove('active', 'bg-black', 'text-white');
+                            b.classList.add('bg-zinc-100', 'text-zinc-700');
+                        });
+                        btn.classList.add('active', 'bg-black', 'text-white');
+                        btn.classList.remove('bg-zinc-100', 'text-zinc-700');
+
+                        const targetCat = btn.getAttribute('data-category');
+                        graphicItems.forEach(item => {
+                            if (targetCat === 'all' || item.getAttribute('data-category') === targetCat) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+
+                const lightbox = document.getElementById('graphic-lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                const lightboxTag = document.getElementById('lightbox-tag');
+                const lightboxTitle = document.getElementById('lightbox-title');
+                const lightboxCounter = document.getElementById('lightbox-counter');
+                const closeBtn = document.getElementById('lightbox-close');
+                const prevBtn = document.getElementById('lightbox-prev');
+                const nextBtn = document.getElementById('lightbox-next');
+
+                let currentIndex = 0;
+                const totalItems = graphicItems.length;
+
+                function openLightbox(index) {
+                    currentIndex = index;
+                    const item = graphicItems[currentIndex];
+                    const src = item.getAttribute('data-src');
+                    const title = item.getAttribute('data-title');
+                    const tag = item.getAttribute('data-tag');
+
+                    lightboxImg.src = src;
+                    lightboxTitle.textContent = title;
+                    lightboxTag.textContent = tag;
+                    lightboxCounter.textContent = `${currentIndex + 1} of ${totalItems}`;
+
+                    lightbox.classList.remove('hidden');
+                    lightbox.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                    setTimeout(() => lightboxImg.classList.remove('scale-95'), 10);
+                }
+
+                function closeLightbox() {
+                    lightboxImg.classList.add('scale-95');
+                    lightbox.classList.add('hidden');
+                    lightbox.classList.remove('flex');
+                    document.body.style.overflow = '';
+                }
+
+                function showNext() {
+                    currentIndex = (currentIndex + 1) % totalItems;
+                    openLightbox(currentIndex);
+                }
+
+                function showPrev() {
+                    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                    openLightbox(currentIndex);
+                }
+
+                graphicItems.forEach((item, idx) => {
+                    item.addEventListener('click', () => openLightbox(idx));
+                });
+
+                closeBtn.addEventListener('click', closeLightbox);
+                nextBtn.addEventListener('click', showNext);
+                prevBtn.addEventListener('click', showPrev);
+
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) closeLightbox();
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (lightbox.classList.contains('flex')) {
+                        if (e.key === 'Escape') closeLightbox();
+                        if (e.key === 'ArrowRight') showNext();
+                        if (e.key === 'ArrowLeft') showPrev();
+                    }
+                });
+            });
+        </script>
+
         <!-- SECTION 3: ✨ THE PREMIUM 'OUR DIFFERENCE' COMPROMISE FEATURE MATRIX LAYER -->
         <!-- <section id="our-difference-matrix" class="w-full bg-[#FCFDFA] py-20 md:py-32 border-t border-zinc-100/50">
             <div class="max-w-6xl mx-auto px-6 md:px-12 text-center">
