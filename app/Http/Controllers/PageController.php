@@ -16,7 +16,7 @@ class PageController extends Controller
 
     public function ourwork(GraphicsGallery $gallery) {
         return view('ourwork', [
-            'graphics' => $gallery->items(),
+            'graphicTiles' => $gallery->tiles(),
             'graphicCategories' => $gallery->categories(),
         ]);
     }

@@ -505,7 +505,7 @@
                     @if (count($graphicCategories) > 1)
                         <div class="flex items-center flex-wrap gap-2 text-xs font-semibold shrink-0">
                             <button class="graphic-filter-btn active bg-black text-white px-4 py-2 rounded-full transition-all duration-300 shadow-sm" data-category="all">
-                                All Work ({{ count($graphics) }})
+                                All Work ({{ count($graphicTiles) }})
                             </button>
                             @foreach ($graphicCategories as $category)
                                 <button class="graphic-filter-btn bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-4 py-2 rounded-full transition-all duration-300" data-category="{{ $category['category'] }}">
@@ -516,22 +516,23 @@
                     @endif
                 </div>
 
-                <!-- Graphic Design Grid Gallery — every image in public/assets/img/graphics -->
+                <!-- Grid: one tile per project card or one-off piece -->
                 <div id="graphic-design-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    @forelse ($graphics as $index => $graphic)
-                        <div class="graphic-item group relative bg-zinc-100 rounded-2xl md:rounded-3xl overflow-hidden border border-zinc-200/60 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-1"
-                             data-category="{{ $graphic['category'] }}"
-                             data-index="{{ $index }}"
-                             data-src="{{ $graphic['src'] }}"
-                             data-type="{{ $graphic['type'] }}"
-                             data-title="{{ $graphic['title'] }}"
-                             data-tag="{{ $graphic['label'] }}">
+                    @forelse ($graphicTiles as $tile)
+                        @php $cover = $tile['cover']; @endphp
+                        <div @if ($tile['slug']) id="{{ $tile['slug'] }}" @endif
+                             class="graphic-item group relative bg-zinc-100 rounded-2xl md:rounded-3xl overflow-hidden border border-zinc-200/60 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-1 scroll-mt-28"
+                             data-category="{{ $tile['category'] }}"
+                             data-kind="{{ $tile['kind'] }}"
+                             data-title="{{ $tile['title'] }}"
+                             data-tag="{{ $tile['label'] }}"
+                             data-media="{{ json_encode(array_map(fn ($m) => ['src' => $m['src'], 'type' => $m['type'], 'title' => $m['title']], $tile['media'])) }}">
 
                             <!-- Media Container -->
                             <div class="w-full aspect-[4/5] relative overflow-hidden bg-zinc-200">
-                                @if ($graphic['type'] === 'video')
-                                    <video src="{{ $graphic['src'] }}"
-                                           @if ($graphic['poster']) poster="{{ $graphic['poster'] }}" @endif
+                                @if ($cover['type'] === 'video')
+                                    <video src="{{ $cover['src'] }}"
+                                           @if ($cover['poster']) poster="{{ $cover['poster'] }}" @endif
                                            muted loop playsinline preload="none"
                                            class="graphic-preview w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"></video>
 
@@ -542,32 +543,57 @@
                                         </span>
                                     </div>
                                 @else
-                                    <img src="{{ $graphic['src'] }}"
-                                         alt="{{ $graphic['title'] }}"
+                                    <img src="{{ $cover['src'] }}"
+                                         alt="{{ $tile['title'] }}"
                                          loading="lazy"
                                          class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out">
+                                @endif
+
+                                @if ($tile['kind'] === 'project')
+                                    <!-- Stacked-sheet edge, so a project reads as a set at a glance -->
+                                    <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/55 backdrop-blur-md border border-white/15 text-white text-[10px] font-bold tracking-wide">
+                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16V6a2 2 0 012-2h10M8 20h10a2 2 0 002-2V8a2 2 0 00-2-2H8a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                        {{ $tile['count'] }}
+                                    </div>
                                 @endif
 
                                 <!-- Hover Overlay Glass Layer -->
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-5 text-white">
                                     <div class="flex justify-between items-center">
                                         <span class="text-[10px] font-bold tracking-widest uppercase bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
-                                            {{ $graphic['label'] }}
+                                            {{ $tile['label'] }}
                                         </span>
                                         <div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
                                         </div>
                                     </div>
                                     <div class="space-y-1">
-                                        <h4 class="text-base font-semibold tracking-tight text-white">{{ $graphic['title'] }}</h4>
-                                        <p class="text-[11px] text-zinc-300 font-light flex items-center gap-1">Click to view full preview →</p>
+                                        <h4 class="text-base font-semibold tracking-tight text-white">{{ $tile['title'] }}</h4>
+                                        @if ($tile['blurb'])
+                                            <p class="text-[11px] text-zinc-300 font-light line-clamp-2">{{ $tile['blurb'] }}</p>
+                                        @endif
+                                        <p class="text-[11px] text-zinc-300 font-light flex items-center gap-1">
+                                            {{ $tile['kind'] === 'project' ? 'View all ' . $tile['count'] . ' assets' : 'Click to view full preview' }} &rarr;
+                                        </p>
                                     </div>
                                 </div>
                             </div>
+
+                            @if ($tile['kind'] === 'project')
+                                <!-- Caption rail: a project earns a name on the card, not just on hover -->
+                                <div class="px-4 py-3 bg-white border-t border-zinc-200/60">
+                                    <h4 class="text-sm font-semibold tracking-tight text-neutral-950 truncate">{{ $tile['title'] }}</h4>
+                                    @if ($tile['client'] || $tile['year'])
+                                        <p class="text-[11px] text-neutral-500 truncate">
+                                            {{ collect([$tile['client'], $tile['year']])->filter()->implode(' · ') }}
+                                        </p>
+                                    @endif
+                                </div>
+                            @endif
                         </div>
                     @empty
                         <p class="col-span-full text-sm text-neutral-500">
-                            No artwork yet — drop images into <code class="text-neutral-800">public/{{ \App\Support\GraphicsGallery::DIR }}</code> and they'll show up here.
+                            No artwork yet &mdash; drop images into <code class="text-neutral-800">public/{{ \App\Support\GraphicsGallery::DIR }}</code> and they'll show up here.
                         </p>
                     @endforelse
                 </div>
@@ -584,7 +610,7 @@
                         Graphic Design
                     </span>
                     <span id="lightbox-counter" class="text-xs text-zinc-400 font-medium">
-                        1 of {{ count($graphics) }}
+                        1 of {{ count($graphicTiles) }}
                     </span>
                 </div>
                 <button id="lightbox-close" class="p-2 text-zinc-400 hover:text-white transition rounded-full hover:bg-zinc-900 focus:outline-none" aria-label="Close modal">
@@ -656,18 +682,28 @@
                 const prevBtn = document.getElementById('lightbox-prev');
                 const nextBtn = document.getElementById('lightbox-next');
 
+                const mediaOf = item => JSON.parse(item.getAttribute('data-media') || '[]');
+
+                // What the arrows walk. Opening a project card confines the set to
+                // that project; opening a one-off walks the visible one-offs, so
+                // arrowing never strands you inside someone else's project.
+                let currentSet = [];
+                let currentLabel = '';
                 let currentIndex = 0;
 
-                function openLightbox(index) {
-                    const totalItems = visibleItems.length;
+                function openSet(media, index, label) {
+                    currentSet = media;
+                    currentLabel = label;
+                    render(index);
+                }
+
+                function render(index) {
+                    const totalItems = currentSet.length;
                     if (!totalItems) return;
 
                     currentIndex = (index + totalItems) % totalItems;
-                    const item = visibleItems[currentIndex];
-                    const src = item.getAttribute('data-src');
-                    const title = item.getAttribute('data-title');
-                    const tag = item.getAttribute('data-tag');
-                    const isVideo = item.getAttribute('data-type') === 'video';
+                    const entry = currentSet[currentIndex];
+                    const isVideo = entry.type === 'video';
 
                     // Swap between the still and the player depending on what was clicked.
                     lightboxVideo.pause();
@@ -675,17 +711,22 @@
                     lightboxImg.classList.toggle('hidden', isVideo);
 
                     if (isVideo) {
-                        lightboxVideo.src = src;
+                        lightboxVideo.src = entry.src;
                         lightboxVideo.play().catch(() => {});
                     } else {
                         lightboxVideo.removeAttribute('src');
                         lightboxVideo.load();
-                        lightboxImg.src = src;
+                        lightboxImg.src = entry.src;
                     }
 
-                    lightboxTitle.textContent = title;
-                    lightboxTag.textContent = tag;
+                    lightboxTitle.textContent = entry.title;
+                    lightboxTag.textContent = currentLabel;
                     lightboxCounter.textContent = `${currentIndex + 1} of ${totalItems}`;
+
+                    // Arrows are noise when there is nothing to move between.
+                    const solo = totalItems < 2;
+                    prevBtn.classList.toggle('hidden', solo);
+                    nextBtn.classList.toggle('hidden', solo);
 
                     lightbox.classList.remove('hidden');
                     lightbox.classList.add('flex');
@@ -702,15 +743,27 @@
                 }
 
                 function showNext() {
-                    openLightbox(currentIndex + 1);
+                    render(currentIndex + 1);
                 }
 
                 function showPrev() {
-                    openLightbox(currentIndex - 1);
+                    render(currentIndex - 1);
                 }
 
                 graphicItems.forEach(item => {
-                    item.addEventListener('click', () => openLightbox(visibleItems.indexOf(item)));
+                    item.addEventListener('click', () => {
+                        const tag = item.getAttribute('data-tag');
+
+                        if (item.getAttribute('data-kind') === 'project') {
+                            openSet(mediaOf(item), 0, `${tag} · ${item.getAttribute('data-title')}`);
+
+                            return;
+                        }
+
+                        // One-offs share a set so the arrows still browse the grid.
+                        const singles = visibleItems.filter(i => i.getAttribute('data-kind') !== 'project');
+                        openSet(singles.flatMap(mediaOf), singles.indexOf(item), tag);
+                    });
 
                     // Video tiles preview themselves on hover; posters keep the grid light until then.
                     const preview = item.querySelector('.graphic-preview');
@@ -728,6 +781,25 @@
                         badge?.classList.remove('opacity-0');
                     });
                 });
+
+                // Deep links (/our-work#project-slug). The hero animations reset
+                // scroll on load, so the browser's own jump gets undone — redo it
+                // once things have settled.
+                const jumpToHash = () => {
+                    if (!location.hash) return;
+
+                    // getElementById, not querySelector: a slug like
+                    // "3d-character-art-bear-warrior" is a valid id but an
+                    // invalid CSS selector, since one cannot start with a digit.
+                    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+
+                    if (target?.classList.contains('graphic-item')) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                };
+
+                window.addEventListener('load', () => setTimeout(jumpToHash, 500));
+                window.addEventListener('hashchange', jumpToHash);
 
                 closeBtn.addEventListener('click', closeLightbox);
                 nextBtn.addEventListener('click', showNext);

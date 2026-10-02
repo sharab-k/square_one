@@ -5,14 +5,25 @@ namespace App\Support;
 class GraphicsGallery
 {
     /**
-     * Folder (relative to public/) that holds the gallery images.
-     * Drop files straight in here, or into a subfolder to group them
-     * under a category — the subfolder name becomes the filter label.
+     * Folder (relative to public/) that holds the gallery media.
+     *
+     * Layout is up to two levels deep, and the depth is what gives meaning:
+     *
+     *   graphics/loose.jpg                        -> a one-off tile
+     *   graphics/<Discipline>/loose.jpg           -> a one-off tile, filed under a discipline
+     *   graphics/<Discipline>/<Project>/a.jpg     -> part of a project card
+     *
+     * The first level becomes the filter button, the second becomes a project
+     * card that opens its own set in the lightbox. Drop a `project.json` beside
+     * the files to give the card a real title, client and blurb.
      */
     public const DIR = 'assets/img/graphics';
 
     /** Where `php artisan gallery:posters` writes video thumbnails (relative to DIR). */
     public const POSTER_DIR = 'posters';
+
+    /** Optional metadata file inside a project folder. */
+    public const PROJECT_FILE = 'project.json';
 
     protected const IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'webp', 'avif', 'gif'];
 
@@ -21,25 +32,35 @@ class GraphicsGallery
     /** Fallback category for files dropped in the folder root. */
     protected const DEFAULT_CATEGORY = 'design';
 
+    /** @var list<array<string, mixed>>|null */
+    protected ?array $cachedItems = null;
+
     /**
-     * Every image and video in the gallery folder.
+     * Every image and video in the gallery folder, flat.
      *
-     * @return list<array{src: string, type: string, poster: ?string, title: string, category: string, label: string}>
+     * @return list<array{src: string, type: string, poster: ?string, title: string, category: string, label: string, project: ?string}>
      */
     public function items(): array
     {
+        if ($this->cachedItems !== null) {
+            return $this->cachedItems;
+        }
+
         $root = public_path(self::DIR);
 
         if (! is_dir($root)) {
-            return [];
+            return $this->cachedItems = [];
         }
 
         $items = [];
 
         foreach ($this->files($root) as $path) {
             $relative = str_replace(DIRECTORY_SEPARATOR, '/', substr($path, strlen($root) + 1));
-            $folder = dirname($relative);
-            $category = $folder === '.' ? self::DEFAULT_CATEGORY : $this->slug($folder);
+            $segments = explode('/', $relative);
+            array_pop($segments);
+
+            $category = isset($segments[0]) ? $this->slug($segments[0]) : self::DEFAULT_CATEGORY;
+            $project = isset($segments[1]) ? $this->slug($segments[0] . '-' . $segments[1]) : null;
             $isVideo = $this->isVideo($relative);
 
             $items[] = [
@@ -48,11 +69,153 @@ class GraphicsGallery
                 'poster' => $isVideo ? $this->poster($relative) : null,
                 'title' => $this->title($relative),
                 'category' => $category,
-                'label' => $this->label($category),
+                'label' => $this->label(isset($segments[0]) ? $segments[0] : self::DEFAULT_CATEGORY),
+                'project' => $project,
+                'projectName' => $segments[1] ?? null,
+                'projectPath' => isset($segments[1]) ? $segments[0] . '/' . $segments[1] : null,
             ];
         }
 
-        return $items;
+        return $this->cachedItems = $items;
+    }
+
+    /**
+     * What the grid actually renders: project cards and one-off tiles, in one
+     * list so the Blade loop and the filter stay simple.
+     *
+     * A project tile carries its whole media set; a single tile carries itself.
+     *
+     * @return list<array<string, mixed>>
+     */
+    public function tiles(): array
+    {
+        // Walk once, keeping the order files appear in. A project takes the
+        // position of its first file, so the grid order stays predictable.
+        $order = [];
+        $projects = [];
+
+        foreach ($this->items() as $item) {
+            if ($item['project'] === null) {
+                $order[] = ['single', $item];
+
+                continue;
+            }
+
+            if (! isset($projects[$item['project']])) {
+                $projects[$item['project']] = ['meta' => $this->projectMeta($item['projectPath']), 'items' => []];
+                $order[] = ['project', $item['project']];
+            }
+
+            $projects[$item['project']]['items'][] = $item;
+        }
+
+        $tiles = [];
+
+        foreach ($order as [$kind, $value]) {
+            if ($kind === 'single') {
+                $tiles[] = [
+                    'kind' => 'single',
+                    'slug' => null,
+                    'category' => $value['category'],
+                    'label' => $value['label'],
+                    'title' => $value['title'],
+                    'client' => null,
+                    'year' => null,
+                    'blurb' => null,
+                    'cover' => $value,
+                    'media' => [$value],
+                    'count' => 1,
+                ];
+
+                continue;
+            }
+
+            $project = $projects[$value];
+            $meta = $project['meta'];
+            $first = $project['items'][0];
+
+            $tiles[] = [
+                'kind' => 'project',
+                'slug' => $value,
+                'category' => $first['category'],
+                'label' => $first['label'],
+                'title' => $meta['title'] ?? $this->label($first['projectName']),
+                'client' => $meta['client'] ?? null,
+                'year' => $meta['year'] ?? null,
+                'blurb' => $meta['blurb'] ?? null,
+                'cover' => $this->cover($project['items'], $meta['cover'] ?? null),
+                'media' => $project['items'],
+                'count' => count($project['items']),
+            ];
+        }
+
+        return $tiles;
+    }
+
+    /**
+     * Categories actually present, counted in tiles rather than files — a
+     * six-asset project is one thing in the grid, so it counts as one.
+     *
+     * @return list<array{category: string, label: string, count: int}>
+     */
+    public function categories(): array
+    {
+        $counts = [];
+
+        foreach ($this->tiles() as $tile) {
+            $counts[$tile['category']] ??= ['category' => $tile['category'], 'label' => $tile['label'], 'count' => 0];
+            $counts[$tile['category']]['count']++;
+        }
+
+        ksort($counts);
+
+        return array_values($counts);
+    }
+
+    /**
+     * The image that leads a project card: whichever file project.json names,
+     * otherwise the first one. Prefer a still — a video poster is a weaker
+     * cover and may not exist yet.
+     *
+     * @param  list<array<string, mixed>>  $items
+     * @return array<string, mixed>
+     */
+    protected function cover(array $items, ?string $named): array
+    {
+        if ($named !== null) {
+            foreach ($items as $item) {
+                if (rawurldecode(basename((string) parse_url($item['src'], PHP_URL_PATH))) === $named) {
+                    return $item;
+                }
+            }
+        }
+
+        foreach ($items as $item) {
+            if ($item['type'] === 'image') {
+                return $item;
+            }
+        }
+
+        return $items[0];
+    }
+
+    /**
+     * Optional per-project metadata. Malformed JSON is ignored rather than
+     * fatal — a typo in one file should not take the page down.
+     *
+     * @return array<string, mixed>
+     */
+    protected function projectMeta(string $projectPath): array
+    {
+        $file = public_path(self::DIR . '/' . $projectPath . '/' . self::PROJECT_FILE);
+
+        if (! is_file($file)) {
+            return [];
+        }
+
+        $decoded = json_decode((string) file_get_contents($file), true);
+
+        return is_array($decoded) ? $decoded : [];
     }
 
     protected function isVideo(string $relative): bool
@@ -78,33 +241,14 @@ class GraphicsGallery
     /** "Video/video-01.mp4" -> "Video__video-01.jpg" */
     public function posterName(string $relative): string
     {
-        return str_replace('/', '__', pathinfo($relative, PATHINFO_DIRNAME) === '.'
-            ? pathinfo($relative, PATHINFO_FILENAME)
-            : pathinfo($relative, PATHINFO_DIRNAME) . '/' . pathinfo($relative, PATHINFO_FILENAME)) . '.jpg';
+        $dir = pathinfo($relative, PATHINFO_DIRNAME);
+        $name = pathinfo($relative, PATHINFO_FILENAME);
+
+        return str_replace('/', '__', $dir === '.' ? $name : $dir . '/' . $name) . '.jpg';
     }
 
     /**
-     * Categories actually present, each with how many images it holds.
-     * Used to build the filter bar, so it never drifts from the files.
-     *
-     * @return list<array{category: string, label: string, count: int}>
-     */
-    public function categories(): array
-    {
-        $counts = [];
-
-        foreach ($this->items() as $item) {
-            $counts[$item['category']] ??= ['category' => $item['category'], 'label' => $item['label'], 'count' => 0];
-            $counts[$item['category']]['count']++;
-        }
-
-        ksort($counts);
-
-        return array_values($counts);
-    }
-
-    /**
-     * All image files under $root, recursing one level into category folders.
+     * All media under $root, down to two folders deep.
      *
      * @return list<string>
      */
@@ -119,6 +263,7 @@ class GraphicsGallery
         $files = array_merge(
             glob($root . $pattern, GLOB_BRACE) ?: [],
             glob($root . '/*' . $pattern, GLOB_BRACE) ?: [],
+            glob($root . '/*/*' . $pattern, GLOB_BRACE) ?: [],
         );
 
         // The generated poster thumbnails are not gallery items themselves.
@@ -184,8 +329,8 @@ class GraphicsGallery
     }
 
     /** "social-media" -> "Social Media" */
-    protected function label(string $category): string
+    protected function label(string $value): string
     {
-        return ucwords(str_replace('-', ' ', $category));
+        return ucwords(str_replace('-', ' ', $value));
     }
 }
