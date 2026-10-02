@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Support\GraphicsGallery;
 
 class PageController extends Controller
 {
@@ -14,8 +14,11 @@ class PageController extends Controller
         return view('services');
     }
 
-    public function ourwork() {
-        return view('ourwork');
+    public function ourwork(GraphicsGallery $gallery) {
+        return view('ourwork', [
+            'graphics' => $gallery->items(),
+            'graphicCategories' => $gallery->categories(),
+        ]);
     }
 
     public function pricing() {

@@ -490,78 +490,86 @@
                     <div class="space-y-4 max-w-2xl">
                         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 border border-zinc-200/60 text-zinc-800 text-[10px] md:text-xs font-bold tracking-widest uppercase">
                             <span class="w-2 h-2 rounded-full bg-black"></span>
-                            <span>Graphic & Brand Design</span>
+                            <span>Graphic, Brand & Motion Design</span>
                         </div>
                         <h2 class="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-neutral-950 leading-tight">
                             Visual Identities, Posters <br class="hidden sm:inline">
                             <span class="italic font-serif font-light text-zinc-500">& Creative Collateral</span>
                         </h2>
                         <p class="text-xs md:text-sm text-neutral-500 leading-relaxed font-normal">
-                            Explore our portfolio of brand graphics, social media artwork, posters, and marketing visuals crafted for modern brands.
+                            Explore our portfolio of brand graphics, social media artwork, posters, and short-form video crafted for modern brands.
                         </p>
                     </div>
 
-                    <!-- Category Filter Buttons -->
-                    <div class="flex items-center flex-wrap gap-2 text-xs font-semibold shrink-0">
-                        <button class="graphic-filter-btn active bg-black text-white px-4 py-2 rounded-full transition-all duration-300 shadow-sm" data-category="all">
-                            All Work (28)
-                        </button>
-                        <button class="graphic-filter-btn bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-4 py-2 rounded-full transition-all duration-300" data-category="branding">
-                            Branding
-                        </button>
-                        <button class="graphic-filter-btn bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-4 py-2 rounded-full transition-all duration-300" data-category="social">
-                            Social Media
-                        </button>
-                        <button class="graphic-filter-btn bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-4 py-2 rounded-full transition-all duration-300" data-category="marketing">
-                            Marketing & Posters
-                        </button>
-                    </div>
+                    <!-- Category Filter Buttons (one per category folder that actually has images) -->
+                    @if (count($graphicCategories) > 1)
+                        <div class="flex items-center flex-wrap gap-2 text-xs font-semibold shrink-0">
+                            <button class="graphic-filter-btn active bg-black text-white px-4 py-2 rounded-full transition-all duration-300 shadow-sm" data-category="all">
+                                All Work ({{ count($graphics) }})
+                            </button>
+                            @foreach ($graphicCategories as $category)
+                                <button class="graphic-filter-btn bg-zinc-100 hover:bg-zinc-200 text-zinc-700 px-4 py-2 rounded-full transition-all duration-300" data-category="{{ $category['category'] }}">
+                                    {{ $category['label'] }} ({{ $category['count'] }})
+                                </button>
+                            @endforeach
+                        </div>
+                    @endif
                 </div>
 
-                <!-- Graphic Design Grid Gallery (28 Items) -->
+                <!-- Graphic Design Grid Gallery — every image in public/assets/img/graphics -->
                 <div id="graphic-design-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    @for ($i = 1; $i <= 28; $i++)
-                        @php
-                            $categories = ['branding', 'social', 'marketing'];
-                            $cat = $categories[($i - 1) % 3];
-                            $catName = match($cat) {
-                                'branding' => 'Branding & Identity',
-                                'social' => 'Social Media Art',
-                                'marketing' => 'Poster & Marketing',
-                            };
-                        @endphp
-                        <div class="graphic-item group relative bg-zinc-100 rounded-2xl md:rounded-3xl overflow-hidden border border-zinc-200/60 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-1" 
-                             data-category="{{ $cat }}" 
-                             data-index="{{ $i - 1 }}"
-                             data-src="{{ asset('assets/img/graphics/graphic-' . $i . '.jpg') }}"
-                             data-title="Creative Artwork #{{ sprintf('%02d', $i) }}"
-                             data-tag="{{ $catName }}">
-                            
-                            <!-- Image Container -->
+                    @forelse ($graphics as $index => $graphic)
+                        <div class="graphic-item group relative bg-zinc-100 rounded-2xl md:rounded-3xl overflow-hidden border border-zinc-200/60 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-1"
+                             data-category="{{ $graphic['category'] }}"
+                             data-index="{{ $index }}"
+                             data-src="{{ $graphic['src'] }}"
+                             data-type="{{ $graphic['type'] }}"
+                             data-title="{{ $graphic['title'] }}"
+                             data-tag="{{ $graphic['label'] }}">
+
+                            <!-- Media Container -->
                             <div class="w-full aspect-[4/5] relative overflow-hidden bg-zinc-200">
-                                <img src="{{ asset('assets/img/graphics/graphic-' . $i . '.jpg') }}" 
-                                     alt="Graphic Design Artwork {{ $i }}" 
-                                     loading="lazy"
-                                     class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out">
-                                
+                                @if ($graphic['type'] === 'video')
+                                    <video src="{{ $graphic['src'] }}"
+                                           @if ($graphic['poster']) poster="{{ $graphic['poster'] }}" @endif
+                                           muted loop playsinline preload="none"
+                                           class="graphic-preview w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"></video>
+
+                                    <!-- Play badge, fades out while the hover preview runs -->
+                                    <div class="graphic-play-badge absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300">
+                                        <span class="w-14 h-14 rounded-full bg-black/45 backdrop-blur-md border border-white/25 flex items-center justify-center text-white shadow-lg">
+                                            <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        </span>
+                                    </div>
+                                @else
+                                    <img src="{{ $graphic['src'] }}"
+                                         alt="{{ $graphic['title'] }}"
+                                         loading="lazy"
+                                         class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out">
+                                @endif
+
                                 <!-- Hover Overlay Glass Layer -->
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-5 text-white">
                                     <div class="flex justify-between items-center">
                                         <span class="text-[10px] font-bold tracking-widest uppercase bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
-                                            {{ $catName }}
+                                            {{ $graphic['label'] }}
                                         </span>
                                         <div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
                                         </div>
                                     </div>
                                     <div class="space-y-1">
-                                        <h4 class="text-base font-semibold tracking-tight text-white">Graphic Work #{{ sprintf('%02d', $i) }}</h4>
+                                        <h4 class="text-base font-semibold tracking-tight text-white">{{ $graphic['title'] }}</h4>
                                         <p class="text-[11px] text-zinc-300 font-light flex items-center gap-1">Click to view full preview →</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    @endfor
+                    @empty
+                        <p class="col-span-full text-sm text-neutral-500">
+                            No artwork yet — drop images into <code class="text-neutral-800">public/{{ \App\Support\GraphicsGallery::DIR }}</code> and they'll show up here.
+                        </p>
+                    @endforelse
                 </div>
 
             </div>
@@ -576,7 +584,7 @@
                         Graphic Design
                     </span>
                     <span id="lightbox-counter" class="text-xs text-zinc-400 font-medium">
-                        1 of 28
+                        1 of {{ count($graphics) }}
                     </span>
                 </div>
                 <button id="lightbox-close" class="p-2 text-zinc-400 hover:text-white transition rounded-full hover:bg-zinc-900 focus:outline-none" aria-label="Close modal">
@@ -594,6 +602,7 @@
                 <!-- Image View -->
                 <div class="max-w-4xl max-h-[80vh] flex items-center justify-center p-2">
                     <img id="lightbox-img" src="" alt="Graphic Preview" class="max-w-full max-h-[78vh] object-contain rounded-xl shadow-2xl transition-all duration-300 scale-95">
+                    <video id="lightbox-video" class="hidden max-w-full max-h-[78vh] object-contain rounded-xl shadow-2xl" controls playsinline></video>
                 </div>
 
                 <!-- Next Button -->
@@ -612,7 +621,12 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const filterBtns = document.querySelectorAll('.graphic-filter-btn');
-                const graphicItems = document.querySelectorAll('.graphic-item');
+                const graphicItems = Array.from(document.querySelectorAll('.graphic-item'));
+
+                if (!graphicItems.length) return;
+
+                // The items the lightbox cycles through: whatever the active filter shows.
+                let visibleItems = graphicItems.slice();
 
                 filterBtns.forEach(btn => {
                     btn.addEventListener('click', () => {
@@ -625,17 +639,16 @@
 
                         const targetCat = btn.getAttribute('data-category');
                         graphicItems.forEach(item => {
-                            if (targetCat === 'all' || item.getAttribute('data-category') === targetCat) {
-                                item.style.display = 'block';
-                            } else {
-                                item.style.display = 'none';
-                            }
+                            const shown = targetCat === 'all' || item.getAttribute('data-category') === targetCat;
+                            item.style.display = shown ? 'block' : 'none';
                         });
+                        visibleItems = graphicItems.filter(item => item.style.display !== 'none');
                     });
                 });
 
                 const lightbox = document.getElementById('graphic-lightbox');
                 const lightboxImg = document.getElementById('lightbox-img');
+                const lightboxVideo = document.getElementById('lightbox-video');
                 const lightboxTag = document.getElementById('lightbox-tag');
                 const lightboxTitle = document.getElementById('lightbox-title');
                 const lightboxCounter = document.getElementById('lightbox-counter');
@@ -644,16 +657,32 @@
                 const nextBtn = document.getElementById('lightbox-next');
 
                 let currentIndex = 0;
-                const totalItems = graphicItems.length;
 
                 function openLightbox(index) {
-                    currentIndex = index;
-                    const item = graphicItems[currentIndex];
+                    const totalItems = visibleItems.length;
+                    if (!totalItems) return;
+
+                    currentIndex = (index + totalItems) % totalItems;
+                    const item = visibleItems[currentIndex];
                     const src = item.getAttribute('data-src');
                     const title = item.getAttribute('data-title');
                     const tag = item.getAttribute('data-tag');
+                    const isVideo = item.getAttribute('data-type') === 'video';
 
-                    lightboxImg.src = src;
+                    // Swap between the still and the player depending on what was clicked.
+                    lightboxVideo.pause();
+                    lightboxVideo.classList.toggle('hidden', !isVideo);
+                    lightboxImg.classList.toggle('hidden', isVideo);
+
+                    if (isVideo) {
+                        lightboxVideo.src = src;
+                        lightboxVideo.play().catch(() => {});
+                    } else {
+                        lightboxVideo.removeAttribute('src');
+                        lightboxVideo.load();
+                        lightboxImg.src = src;
+                    }
+
                     lightboxTitle.textContent = title;
                     lightboxTag.textContent = tag;
                     lightboxCounter.textContent = `${currentIndex + 1} of ${totalItems}`;
@@ -665,6 +694,7 @@
                 }
 
                 function closeLightbox() {
+                    lightboxVideo.pause();
                     lightboxImg.classList.add('scale-95');
                     lightbox.classList.add('hidden');
                     lightbox.classList.remove('flex');
@@ -672,17 +702,31 @@
                 }
 
                 function showNext() {
-                    currentIndex = (currentIndex + 1) % totalItems;
-                    openLightbox(currentIndex);
+                    openLightbox(currentIndex + 1);
                 }
 
                 function showPrev() {
-                    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-                    openLightbox(currentIndex);
+                    openLightbox(currentIndex - 1);
                 }
 
-                graphicItems.forEach((item, idx) => {
-                    item.addEventListener('click', () => openLightbox(idx));
+                graphicItems.forEach(item => {
+                    item.addEventListener('click', () => openLightbox(visibleItems.indexOf(item)));
+
+                    // Video tiles preview themselves on hover; posters keep the grid light until then.
+                    const preview = item.querySelector('.graphic-preview');
+                    if (!preview) return;
+
+                    const badge = item.querySelector('.graphic-play-badge');
+
+                    item.addEventListener('mouseenter', () => {
+                        preview.play().then(() => badge?.classList.add('opacity-0')).catch(() => {});
+                    });
+
+                    item.addEventListener('mouseleave', () => {
+                        preview.pause();
+                        preview.currentTime = 0;
+                        badge?.classList.remove('opacity-0');
+                    });
                 });
 
                 closeBtn.addEventListener('click', closeLightbox);
