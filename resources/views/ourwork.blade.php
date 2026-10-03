@@ -533,6 +533,7 @@
                                 @if ($cover['type'] === 'video')
                                     <video src="{{ $cover['src'] }}"
                                            @if ($cover['poster']) poster="{{ $cover['poster'] }}" @endif
+                                           @if ($cover['dimensions']) width="{{ $cover['dimensions'][0] }}" height="{{ $cover['dimensions'][1] }}" @endif
                                            muted loop playsinline preload="none"
                                            class="graphic-preview w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"></video>
 
@@ -545,7 +546,8 @@
                                 @else
                                     <img src="{{ $cover['src'] }}"
                                          alt="{{ $tile['title'] }}"
-                                         loading="lazy"
+                                         loading="lazy" decoding="async"
+                                         @if ($cover['dimensions']) width="{{ $cover['dimensions'][0] }}" height="{{ $cover['dimensions'][1] }}" @endif
                                          class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out">
                                 @endif
 

@@ -39,9 +39,8 @@ class GenerateGalleryPosters extends Command
         $failed = 0;
 
         foreach ($videos as $path => $posterName) {
-            // Seek a second in: the very first frame is often black.
             $process = new Process([
-                'ffmpeg', '-y', '-ss', '1', '-i', $path,
+                'ffmpeg', '-y', '-ss', $this->seekPoint($path), '-i', $path,
                 '-frames:v', '1', '-q:v', '4',
                 $posterDir . DIRECTORY_SEPARATOR . $posterName,
             ]);
@@ -57,9 +56,32 @@ class GenerateGalleryPosters extends Command
         }
 
         $made = count($videos) - $failed;
+
         $this->newLine();
         $this->info("Generated {$made} poster(s)." . ($failed ? " {$failed} failed — is ffmpeg installed?" : ''));
 
         return $failed ? self::FAILURE : self::SUCCESS;
+    }
+
+    /**
+     * Where to grab the still from. Not frame zero — that is often black, and
+     * on a screen recording the first second tends to catch a notification
+     * toast or a menu still open. A little way in is more representative.
+     */
+    protected function seekPoint(string $path): string
+    {
+        $probe = new Process([
+            'ffprobe', '-v', 'error', '-show_entries', 'format=duration',
+            '-of', 'default=nw=1:nk=1', $path,
+        ]);
+        $probe->run();
+
+        $duration = (float) trim($probe->getOutput());
+
+        if ($duration <= 0.0) {
+            return '1';
+        }
+
+        return (string) round(max(1.0, min(5.0, $duration * 0.1)), 2);
     }
 }
