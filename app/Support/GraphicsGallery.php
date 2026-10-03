@@ -140,6 +140,14 @@ class GraphicsGallery
             $project = $projects[$value];
             $meta = $project['meta'];
             $first = $project['items'][0];
+            $cover = $this->cover($project['items'], $meta['cover'] ?? null);
+
+            // Open on the cover: clicking a card should show the picture that
+            // was on it, not whatever happens to sort first.
+            $media = array_values(array_merge(
+                [$cover],
+                array_filter($project['items'], fn ($item) => $item !== $cover),
+            ));
 
             $tiles[] = [
                 'kind' => 'project',
@@ -150,9 +158,9 @@ class GraphicsGallery
                 'client' => $meta['client'] ?? null,
                 'year' => $meta['year'] ?? null,
                 'blurb' => $meta['blurb'] ?? null,
-                'cover' => $this->cover($project['items'], $meta['cover'] ?? null),
-                'media' => $project['items'],
-                'count' => count($project['items']),
+                'cover' => $cover,
+                'media' => $media,
+                'count' => count($media),
             ];
         }
 
