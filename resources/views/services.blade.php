@@ -13,7 +13,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
     <style>
         .navbar_heading{
@@ -143,7 +143,7 @@
     
     <!-- BACKGROUND IMAGE LAYER -->
     <div class="absolute inset-0 z-0 select-none pointer-events-none">
-        <img src="{{ asset('assets/img/services_hero.png') }}" 
+        <img src="{{ asset('assets/img/services_hero.webp') }}" 
              alt="Square One Creative Space Backdrop" 
              class="w-full h-full object-cover object-center block opacity-60 md:opacity-70">
         
@@ -220,7 +220,7 @@
 
             <div class="lg:col-span-6 w-full flex justify-center lg:justify-end items-center">
                 <div class="w-full max-w-[540px] aspect-[3/4] rounded-lg overflow-hidden bg-neutral-100 shadow-xl">
-                    <img src="{{ asset('assets/img/services2.png') }}" alt="Square One design and development workspace showcase" class="w-full h-full object-cover object-center rounded-lg pointer-events-none">
+                    <img src="{{ asset('assets/img/services2.webp') }}" alt="Square One design and development workspace showcase" class="w-full h-full object-cover object-center rounded-lg pointer-events-none">
                 </div>
             </div>
 
@@ -231,7 +231,7 @@
             
             <div class="lg:col-span-6 w-full flex justify-center lg:justify-start items-center order-2 lg:order-1">
                 <div class="w-full max-w-[560px] aspect-[16/10] bg-neutral-900 rounded-2xl overflow-hidden shadow-2xl relative">
-                    <img src="{{ asset('assets/img/services1.png') }}" alt="Square One design and development workspace showcase" class="w-full h-full object-cover object-center rounded-lg pointer-events-none">
+                    <img src="{{ asset('assets/img/services1.webp') }}" alt="Square One design and development workspace showcase" class="w-full h-full object-cover object-center rounded-lg pointer-events-none">
                     
                     <div class="absolute inset-0 bg-black/5 pointer-events-none"></div>
                 </div>
@@ -590,6 +590,20 @@
 <!-- ENGINE SCRIPT: HIGH RETENTION SCROLL TRIGGER EXECUTION -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
+        // These cards and headers are opacity-0 in the markup and only become
+        // visible when the animation below runs. If GSAP did not load — blocked
+        // or slow CDN, offline, an ad blocker — or the visitor asked for reduced
+        // motion, show them immediately instead of leaving the section blank.
+        const revealTargets = document.querySelectorAll('.service-card, .service-header');
+        const revealNow = () => revealTargets.forEach(el => el.classList.remove('opacity-0'));
+
+        if (!window.gsap || !window.ScrollTrigger ||
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            revealNow();
+
+            return;
+        }
+
         // Register ScrollTrigger Plugin securely
         gsap.registerPlugin(ScrollTrigger);
 
@@ -1002,7 +1016,7 @@
     <section id="pre-footer-cta-matrix" class="w-full bg-black text-white py-28 md:py-40 overflow-hidden border-t border-zinc-900 relative flex items-center justify-center">
     
     <div class="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
-        <img src="{{ asset('assets/img/services_hero1.png') }}" 
+        <img src="{{ asset('assets/img/services_hero1.webp') }}" 
              alt="Creative team workspace synergy texture" 
              class="w-full h-full object-cover object-center opacity-25 brightness-125 contrast-[1.05] filter scale-[1.02]">
         

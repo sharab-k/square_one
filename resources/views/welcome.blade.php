@@ -317,7 +317,7 @@
 
                 <div class="lg:col-span-6 w-full flex justify-center lg:justify-end items-center">
                     <div class="w-full max-w-[540px] aspect-[3/4] rounded-lg overflow-hidden bg-neutral-100 shadow-xl">
-                        <img src="{{ asset('assets/img/img1.png') }}" alt="Creative worker exploring alternative ideas" class="w-full h-full object-cover object-center rounded-lg pointer-events-none">
+                        <img src="{{ asset('assets/img/img1.webp') }}" alt="Creative worker exploring alternative ideas" class="w-full h-full object-cover object-center rounded-lg pointer-events-none">
                     </div>
                 </div>
 
@@ -1198,7 +1198,7 @@
         </div>
 
         <div class="w-full lg:col-span-7 relative min-h-[380px] lg:min-h-full overflow-hidden">
-            <img src="{{ asset('assets/img/pricing1.png') }}" 
+            <img src="{{ asset('assets/img/pricing1.webp') }}" 
                  alt="World-class creative team production process workflow" 
                  class="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.015] transition-transform duration-700 ease-out">
             
@@ -1210,7 +1210,7 @@
     <div class="w-full min-h-[600px] md:min-h-[680px] grid grid-cols-1 lg:grid-cols-12 items-stretch">
         
         <div class="w-full lg:col-span-5 relative min-h-[380px] lg:min-h-full overflow-hidden order-2 lg:order-1 border-r border-zinc-900/40">
-            <img src="{{ asset('assets/img/pricing2.png') }}" 
+            <img src="{{ asset('assets/img/pricing2.webp') }}" 
                  alt="World-class creative design process strategy meeting" 
                  class="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.015] transition-transform duration-700 ease-out">
             

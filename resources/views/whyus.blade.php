@@ -1021,7 +1021,7 @@
     <!-- PRE-FOOTER CTA MATRIX SECTION -->
     <section id="pre-footer-cta-matrix" class="w-full bg-black text-white py-28 md:py-40 overflow-hidden relative flex items-center justify-center">
         <div class="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
-            <img src="{{ asset('assets/img/whyus-prefooter.png') }}" 
+            <img src="{{ asset('assets/img/whyus-prefooter.webp') }}" 
                  alt="Creative team synergy texture" 
                  class="w-full h-full object-cover object-center opacity-25 brightness-125 contrast-[1.05] filter scale-[1.02]">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black"></div>

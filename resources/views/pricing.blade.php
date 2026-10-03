@@ -565,7 +565,7 @@
         </div>
 
         <div class="w-full lg:col-span-7 relative min-h-[380px] lg:min-h-full overflow-hidden">
-            <img src="{{ asset('assets/img/pricing2.png') }}" 
+            <img src="{{ asset('assets/img/pricing2.webp') }}" 
                  alt="Square One Studio Production Workflow Team" 
                  class="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.015] transition-transform duration-700 ease-out">
             <div class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent pointer-events-none"></div>
@@ -576,7 +576,7 @@
     <div class="w-full min-h-[600px] md:min-h-[680px] grid grid-cols-1 lg:grid-cols-12 items-stretch">
         
         <div class="w-full lg:col-span-5 relative min-h-[380px] lg:min-h-full overflow-hidden order-2 lg:order-1 border-r border-zinc-900/40">
-                    <img src="{{ asset('assets/img/pricing1.png') }}" 
+                    <img src="{{ asset('assets/img/pricing1.webp') }}" 
                  alt="AI-First Design Systems Engineering Operations" 
                  class="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-[1.015] transition-transform duration-700 ease-out">
             <div class="absolute inset-0 bg-gradient-to-l from-black/20 via-transparent to-transparent pointer-events-none"></div>
